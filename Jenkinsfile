@@ -21,5 +21,11 @@ pip install -r requirements.txt '''
 pytest --cov-report xml --cov-report term --cov ./lib/'''
       }
     }
+    stage('provision') {
+      steps {
+        sh '''cd deployment
+sh provision.sh'''
+      }
+    }
   }
 }

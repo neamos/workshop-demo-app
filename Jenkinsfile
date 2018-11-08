@@ -22,6 +22,9 @@ pytest --cov-report xml --cov-report term --cov ./lib/'''
       }
     }
     stage('provision') {
+      when {
+        branch 'master'
+      }
       steps {
         sh '''cd deployment
 sh provision.sh'''

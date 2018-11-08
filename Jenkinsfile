@@ -14,6 +14,9 @@ pip install -r requirements.txt '''
       }
     }
     stage('error') {
+      when {
+        branch 'master'
+      }
       steps {
         sh '''# Activate python virtual environment
 . repo/bin/activate
